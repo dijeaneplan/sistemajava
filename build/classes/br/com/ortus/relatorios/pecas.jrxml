@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pecas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f1763cbb-14c1-4e7d-bd50-f41853757c50">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     componente.`id` AS componente_id,
+     componente.`nome` AS componente_nome,
+     componente.`qtde` AS componente_qtde,
+     componente.`unidadeMedida` AS componente_unidadeMedida,
+     componente.`valor` AS componente_valor,
+     componente.`usuario_id` AS componente_usuario_id,
+     componente.`custo` AS componente_custo,
+     componente.`idProdusys` AS componente_idProdusys
+FROM
+     `componente` componente]]>
+	</queryString>
+	<field name="componente_id" class="java.lang.Integer"/>
+	<field name="componente_nome" class="java.lang.String"/>
+	<field name="componente_qtde" class="java.lang.Double"/>
+	<field name="componente_unidadeMedida" class="java.lang.String"/>
+	<field name="componente_valor" class="java.lang.Double"/>
+	<field name="componente_usuario_id" class="java.lang.Integer"/>
+	<field name="componente_custo" class="java.lang.Double"/>
+	<field name="componente_idProdusys" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="45dafef0-148f-4fa2-866c-5b3059cec63e" x="0" y="0" width="555" height="20" forecolor="#9999FF" backcolor="#9999FF"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="7bd53f90-f40f-4bd9-926e-500ddae3b059" x="45" y="1" width="254" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eeba2614-437f-46ea-9528-87c4c035fe05" x="299" y="0" width="46" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UND.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f67a6237-5ef2-45c3-a1a1-03399ca41ae4" x="388" y="0" width="85" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0157d659-d64d-4ca3-b0ca-8778631b759b" x="473" y="0" width="82" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Técnico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f214a39f-6d0f-4e23-b03e-a9ad3b7aef3d" x="345" y="1" width="43" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Custo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="492feb6e-741d-43a1-ad16-bf73109327b8" x="0" y="1" width="46" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement uuid="7c1a67d0-f097-45ac-9e3b-4566122e5951" x="45" y="0" width="254" height="20"/>
+				<textElement>
+					<font fontName="Monospaced" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{componente_nome}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="fae83189-d9ca-4277-b5cf-c9af0f67799c" x="299" y="1" width="46" height="20"/>
+				<textElement>
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{componente_unidadeMedida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="84420e9d-49d8-4363-b095-e4cfb6225ce8" x="403" y="3" width="57" height="17" forecolor="#FF3333"/>
+				<textElement>
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{componente_valor}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="e6f196a7-32e1-49c4-8cf6-294c704f0406" x="0" y="18" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="433cef2c-b487-47ea-b5e8-f79d6da20898" x="473" y="0" width="27" height="19" forecolor="#00CC33"/>
+				<textElement textAlignment="Right">
+					<font fontName="Monospaced" isBold="true"/>
+				</textElement>
+				<text><![CDATA[R$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="433cef2c-b487-47ea-b5e8-f79d6da20898" x="388" y="3" width="15" height="18" forecolor="#FF3333"/>
+				<textElement>
+					<font fontName="Monospaced"/>
+				</textElement>
+				<text><![CDATA[R$]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="c3635a48-b497-41fd-a063-11624ce958f9" x="345" y="1" width="43" height="20"/>
+				<textElement>
+					<font fontName="Monospaced" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{componente_custo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="143aced0-54e7-4f73-a8a5-3bcc8d215855" x="501" y="0" width="54" height="20" forecolor="#00CC33"/>
+				<textElement>
+					<font fontName="Monospaced" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{componente_qtde}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0ea2804a-76b5-408a-ae4d-0c82ec3e2612" x="0" y="1" width="46" height="20"/>
+				<textElement>
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{componente_idProdusys}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="71ef6ead-a408-42de-b4a0-7ced3e2e5f65" x="435" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="3bb0df50-5835-4adf-b0ac-90bc356fe98d" x="515" y="0" width="40" height="20"/>
+				<textElement>
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="3843ad8d-b85f-4a04-9e50-cfda50e768d1" x="0" y="0" width="223" height="20"/>
+				<textElement>
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="trocasEnviadas" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="70"/>
+	<queryString>
+		<![CDATA[SELECT
+     pedidosreservados.`id` AS pedidosreservados_id,
+     pedidosreservados.`biojato` AS pedidosreservados_biojato,
+     pedidosreservados.`bioscalerCB` AS pedidosreservados_bioscalerCB,
+     pedidosreservados.`bioscalerSB` AS pedidosreservados_bioscalerSB,
+     pedidosreservados.`dataEmissaoPedido` AS pedidosreservados_dataEmissaoPedido,
+     pedidosreservados.`dataEnvioPA` AS pedidosreservados_dataEnvioPA,
+     pedidosreservados.`dataPANoEstoque` AS pedidosreservados_dataPANoEstoque,
+     pedidosreservados.`dataPrevistaProducao` AS pedidosreservados_dataPrevistaProducao,
+     pedidosreservados.`formaEnvio` AS pedidosreservados_formaEnvio,
+     pedidosreservados.`nomeCliente` AS pedidosreservados_nomeCliente,
+     pedidosreservados.`numeroPedido` AS pedidosreservados_numeroPedido,
+     pedidosreservados.`obs` AS pedidosreservados_obs,
+     pedidosreservados.`representante` AS pedidosreservados_representante,
+     pedidosreservados.`status` AS pedidosreservados_status,
+     pedidosreservados.`soniI` AS pedidosreservados_soniI,
+     pedidosreservados.`soniII` AS pedidosreservados_soniII,
+     pedidosreservados.`ledLuxI` AS pedidosreservados_ledLuxI,
+     pedidosreservados.`ledLuxII` AS pedidosreservados_ledLuxII,
+     pedidosreservados.`kitLedLux` AS pedidosreservados_kitLedLux,
+     pedidosreservados.`kitOrtusonic` AS pedidosreservados_kitOrtusonic,
+     pedidosreservados.`kitJato` AS pedidosreservados_kitJato
+FROM
+     `pedidosreservados` pedidosreservados
+
+WHERE
+	pedidosreservados.`status` = 'Enviado']]>
+	</queryString>
+	<field name="pedidosreservados_id" class="java.lang.Integer"/>
+	<field name="pedidosreservados_biojato" class="java.lang.Integer"/>
+	<field name="pedidosreservados_bioscalerCB" class="java.lang.Integer"/>
+	<field name="pedidosreservados_bioscalerSB" class="java.lang.Integer"/>
+	<field name="pedidosreservados_dataEmissaoPedido" class="java.lang.String"/>
+	<field name="pedidosreservados_dataEnvioPA" class="java.lang.String"/>
+	<field name="pedidosreservados_dataPANoEstoque" class="java.lang.String"/>
+	<field name="pedidosreservados_dataPrevistaProducao" class="java.lang.String"/>
+	<field name="pedidosreservados_formaEnvio" class="java.lang.String"/>
+	<field name="pedidosreservados_nomeCliente" class="java.lang.String"/>
+	<field name="pedidosreservados_numeroPedido" class="java.lang.Integer"/>
+	<field name="pedidosreservados_obs" class="java.lang.String"/>
+	<field name="pedidosreservados_representante" class="java.lang.String"/>
+	<field name="pedidosreservados_status" class="java.lang.String"/>
+	<field name="pedidosreservados_soniI" class="java.lang.Integer"/>
+	<field name="pedidosreservados_soniII" class="java.lang.Integer"/>
+	<field name="pedidosreservados_ledLuxI" class="java.lang.Integer"/>
+	<field name="pedidosreservados_ledLuxII" class="java.lang.Integer"/>
+	<field name="pedidosreservados_kitLedLux" class="java.lang.Integer"/>
+	<field name="pedidosreservados_kitOrtusonic" class="java.lang.Integer"/>
+	<field name="pedidosreservados_kitJato" class="java.lang.Integer"/>
+	<group name="pedidosreservados_id">
+		<groupExpression><![CDATA[$F{pedidosreservados_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="64" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="64"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="140" y="0" width="522" height="64" forecolor="#000099"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELATORIO DE PEDIDOS ENVIADOS - ORTUS ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="23" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="22" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="14" width="32" height="20" forecolor="#003399"/>
+				<textElement verticalAlignment="Top">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COD.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="14" width="59" height="20" forecolor="#003399"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMISSÃO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="91" y="14" width="49" height="20" forecolor="#003399"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PEDIDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="14" width="128" height="20" forecolor="#003399"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="14" width="88" height="20" forecolor="#003399"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPRESENTANTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="14" width="80" height="20" forecolor="#003399"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ENVIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="14" width="100" height="20" forecolor="#003399"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA PREVISTA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="536" y="14" width="266" height="20" forecolor="#003399"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBS:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="88" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="22" width="91" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[EQUIPAMENTOS:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="1" width="802" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="32" y="2" width="59" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_dataEmissaoPedido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="2" width="31" height="20" forecolor="#003399"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="2" width="49" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_numeroPedido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="2" width="128" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_nomeCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="2" width="88" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_representante}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="356" y="1" width="80" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_formaEnvio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="436" y="0" width="100" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_dataPrevistaProducao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="536" y="1" width="266" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_obs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="42" width="49" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_biojato}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="91" y="22" width="49" height="20" forecolor="#003399"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Biojato]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="42" width="55" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_bioscalerCB}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="22" width="55" height="20" forecolor="#003399"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Biosc. CB]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="195" y="42" width="49" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_bioscalerSB}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="195" y="22" width="49" height="20" forecolor="#003399"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Biosc. SB]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="244" y="42" width="46" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_soniI}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="244" y="22" width="46" height="20" forecolor="#003399"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Soni I]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="22" width="46" height="20" forecolor="#003399"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Soni II]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="22" width="46" height="20" forecolor="#003399"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Led I]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="382" y="22" width="46" height="20" forecolor="#003399"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Led II]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="428" y="22" width="46" height="20" forecolor="#003399"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kit Led]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="290" y="42" width="46" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_soniII}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="474" y="22" width="46" height="20" forecolor="#003399"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[kit Ortus.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="520" y="22" width="46" height="20" forecolor="#003399"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kit jato]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="336" y="42" width="46" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_ledLuxI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="382" y="42" width="46" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_ledLuxII}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="428" y="42" width="46" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_kitLedLux}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="42" width="46" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_kitOrtusonic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="42" width="46" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_kitJato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="68" width="95" height="20" forecolor="#339900"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedidosreservados_status}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="68" width="44" height="20" forecolor="#CC0000"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="32" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="11" width="150" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="682" y="11" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="762" y="11" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="1" width="801" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>
